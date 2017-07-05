@@ -1,0 +1,2110 @@
+INFO:root:pos counts:3000
+INFO:root:neg counts:3000
+INFO:root:The maximum length of all sentences: 1286
+INFO:root:the total vocabulary is 1007
+INFO:root:next batch ---#---pos=1000,neg=1000
+INFO:root:x_train: 1600, x_dev: 300, x_test: 400
+INFO:root:y_train: 1600, y_dev: 300, y_test: 400
+2017-07-04 15:47:04.370612: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-04 15:47:04.370652: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-04 15:47:04.370660: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-04 15:47:04.370667: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-04 15:47:04.370673: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-04 15:47:11.578369: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:02:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-04 15:47:11.865563: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x8883300 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2017-07-04 15:47:11.866972: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 1 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:03:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-04 15:47:12.184592: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x8bca3b0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2017-07-04 15:47:12.186213: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 2 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:82:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-04 15:47:12.186847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 0 and 2
+2017-07-04 15:47:12.186904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 1 and 2
+2017-07-04 15:47:12.186930: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 2 and 0
+2017-07-04 15:47:12.186949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 2 and 1
+2017-07-04 15:47:12.186994: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 1 2 
+2017-07-04 15:47:12.187012: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y Y N 
+2017-07-04 15:47:12.187023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 1:   Y Y N 
+2017-07-04 15:47:12.187033: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 2:   N N Y 
+2017-07-04 15:47:12.187060: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0)
+2017-07-04 15:47:12.187074: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla K40m, pci bus id: 0000:03:00.0)
+2017-07-04 15:47:12.187085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla K40m, pci bus id: 0000:82:00.0)
+2017-07-04 15:47:12.553818: I tensorflow/core/common_runtime/direct_session.cc:265] Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: Tesla K40m, pci bus id: 0000:03:00.0
+/job:localhost/replica:0/task:0/gpu:2 -> device: 2, name: Tesla K40m, pci bus id: 0000:82:00.0
+
+2017-07-04 15:47:12.554212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0)
+2017-07-04 15:47:12.554239: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla K40m, pci bus id: 0000:03:00.0)
+2017-07-04 15:47:12.554250: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla K40m, pci bus id: 0000:82:00.0)
+INFO:root:the sequence_length is:1286
+INFO:root:Tensor("embedding/embedding_lookup:0", shape=(?, 1286, 128), dtype=float32)
+INFO:root:this embedded_chars_expanded size:Tensor("Shape:0", shape=(4,), dtype=int32)
+INFO:root:Tensor("embedding/ExpandDims:0", shape=(?, 1286, 128, 1), dtype=float32)
+INFO:root:[3, 128, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-3/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-3/W:0' shape=(3, 128, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-3/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-3/conv:0", shape=(?, 1284, 1, 256), dtype=float32)
+INFO:root:[4, 128, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-4/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-4/W:0' shape=(4, 128, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-4/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-4/conv:0", shape=(?, 1283, 1, 256), dtype=float32)
+INFO:root:[5, 128, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-5/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-5/W:0' shape=(5, 128, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-5/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-5/conv:0", shape=(?, 1282, 1, 256), dtype=float32)
+INFO:root:Combine all the pooled features
+INFO:root:-------------output layer------
+INFO:root:save path is /home/liuwei/ming/tensorflow/modelTest/CNN_Model/out_train_model
+WARNING:tensorflow:From train.py:79: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+WARNING:tensorflow:From train.py:79: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+WARNING:tensorflow:From /usr/lib/python2.7/site-packages/tensorflow/python/util/tf_should_use.py:170: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+WARNING:tensorflow:From /usr/lib/python2.7/site-packages/tensorflow/python/util/tf_should_use.py:170: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+INFO:root:train_batches type is <type 'generator'>
+INFO:root:start CNN train: batch_size=100,num_epochs=50
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=1 of training ,loss=2.59655332565,acc=0.479999989271
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=2 of training ,loss=2.37240624428,acc=0.52999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=3 of training ,loss=2.92463350296,acc=0.5
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=4 of training ,loss=2.59093284607,acc=0.479999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=5 of training ,loss=2.50085473061,acc=0.499999970198
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=6 of training ,loss=2.32874083519,acc=0.519999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=7 of training ,loss=2.57393360138,acc=0.469999998808
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=8 of training ,loss=1.59593260288,acc=0.6099999547
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=9 of training ,loss=1.81136155128,acc=0.55999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=10 of training ,loss=2.46383070946,acc=0.489999979734
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=11 of training ,loss=2.3230714798,acc=0.42999997735
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=12 of training ,loss=1.85058259964,acc=0.549999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=13 of training ,loss=1.71130013466,acc=0.55999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=14 of training ,loss=2.01697635651,acc=0.549999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=15 of training ,loss=2.14419341087,acc=0.52999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=16 of training ,loss=1.72393798828,acc=0.599999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=17 of training ,loss=1.71065795422,acc=0.52999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=18 of training ,loss=2.24774575233,acc=0.539999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=19 of training ,loss=1.82764458656,acc=0.579999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=20 of training ,loss=1.64310646057,acc=0.610000014305
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=21 of training ,loss=1.35647177696,acc=0.689999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=22 of training ,loss=1.50222349167,acc=0.589999914169
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=23 of training ,loss=1.15352833271,acc=0.649999976158
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=24 of training ,loss=2.26491641998,acc=0.509999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=25 of training ,loss=1.40450155735,acc=0.649999976158
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=26 of training ,loss=1.79097008705,acc=0.579999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=27 of training ,loss=1.64952707291,acc=0.650000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=28 of training ,loss=1.47919511795,acc=0.639999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=29 of training ,loss=1.78806221485,acc=0.549999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=30 of training ,loss=1.39793801308,acc=0.629999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=31 of training ,loss=1.87705695629,acc=0.569999992847
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=32 of training ,loss=1.6469899416,acc=0.589999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=33 of training ,loss=1.21233701706,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=34 of training ,loss=1.29953992367,acc=0.620000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=35 of training ,loss=1.5525752306,acc=0.6099999547
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=36 of training ,loss=1.00667226315,acc=0.689999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=37 of training ,loss=1.2741907835,acc=0.679999947548
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=38 of training ,loss=1.37005317211,acc=0.579999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=39 of training ,loss=1.46051096916,acc=0.689999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=40 of training ,loss=1.15239930153,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=41 of training ,loss=1.19173431396,acc=0.6099999547
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=42 of training ,loss=1.07580542564,acc=0.679999947548
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=43 of training ,loss=1.02403891087,acc=0.659999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=44 of training ,loss=1.3414927721,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=45 of training ,loss=1.22194361687,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=46 of training ,loss=1.14560341835,acc=0.659999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=47 of training ,loss=1.14765655994,acc=0.680000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=48 of training ,loss=1.13719844818,acc=0.719999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=49 of training ,loss=1.10683214664,acc=0.63999992609
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=50 of training ,loss=1.15416955948,acc=0.629999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=51 of training ,loss=1.15399384499,acc=0.689999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=52 of training ,loss=1.35910201073,acc=0.629999935627
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=53 of training ,loss=1.04401016235,acc=0.659999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=54 of training ,loss=1.06561696529,acc=0.679999947548
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=55 of training ,loss=0.680654644966,acc=0.749999940395
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=56 of training ,loss=0.815130472183,acc=0.769999921322
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=57 of training ,loss=1.09289205074,acc=0.719999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=58 of training ,loss=1.18187594414,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=59 of training ,loss=1.44722676277,acc=0.629999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=60 of training ,loss=1.06759917736,acc=0.639999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=61 of training ,loss=1.00798523426,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=62 of training ,loss=1.16709005833,acc=0.639999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=63 of training ,loss=0.970918357372,acc=0.729999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=64 of training ,loss=0.923933506012,acc=0.740000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=65 of training ,loss=0.937453210354,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=66 of training ,loss=1.00004827976,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=67 of training ,loss=0.868347346783,acc=0.729999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=68 of training ,loss=0.920377612114,acc=0.709999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=69 of training ,loss=1.11990427971,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=70 of training ,loss=0.799039125443,acc=0.709999918938
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=71 of training ,loss=1.3067253828,acc=0.669999957085
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=72 of training ,loss=1.16230845451,acc=0.709999918938
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=73 of training ,loss=1.05211091042,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=74 of training ,loss=0.930867254734,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=75 of training ,loss=0.70828294754,acc=0.769999921322
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=76 of training ,loss=0.677588045597,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=77 of training ,loss=0.771635830402,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=78 of training ,loss=0.838130176067,acc=0.780000030994
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=79 of training ,loss=0.679573178291,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=80 of training ,loss=0.714631736279,acc=0.740000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=81 of training ,loss=0.752140164375,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=82 of training ,loss=0.661932110786,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=83 of training ,loss=0.991225242615,acc=0.709999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=84 of training ,loss=0.681657016277,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=85 of training ,loss=0.798106849194,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=86 of training ,loss=0.686943888664,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=87 of training ,loss=0.701011776924,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=88 of training ,loss=0.612575292587,acc=0.799999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=89 of training ,loss=0.793068885803,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=90 of training ,loss=0.89116191864,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=91 of training ,loss=0.642413914204,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=92 of training ,loss=0.847683250904,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=93 of training ,loss=0.787222623825,acc=0.679999947548
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=94 of training ,loss=0.682285130024,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=95 of training ,loss=0.810872673988,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=96 of training ,loss=0.748554646969,acc=0.699999928474
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=97 of training ,loss=0.782097220421,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=98 of training ,loss=0.69567245245,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=99 of training ,loss=0.868142366409,acc=0.759999930859
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=100 of training ,loss=0.689461648464,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=101 of training ,loss=0.640309929848,acc=0.740000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=102 of training ,loss=0.710333347321,acc=0.800000011921
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=103 of training ,loss=0.63718855381,acc=0.799999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=104 of training ,loss=0.724644005299,acc=0.699999928474
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=105 of training ,loss=0.51525747776,acc=0.800000011921
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=106 of training ,loss=0.685168623924,acc=0.72000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=107 of training ,loss=0.48603746295,acc=0.860000014305
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=108 of training ,loss=0.761785984039,acc=0.730000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=109 of training ,loss=0.874457597733,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=110 of training ,loss=0.768502116203,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=111 of training ,loss=0.864484369755,acc=0.739999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=112 of training ,loss=0.634101867676,acc=0.729999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=113 of training ,loss=0.696907699108,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=114 of training ,loss=0.567455768585,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=115 of training ,loss=0.664806485176,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=116 of training ,loss=0.706112742424,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=117 of training ,loss=0.922129750252,acc=0.729999899864
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=118 of training ,loss=0.731099009514,acc=0.799999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=119 of training ,loss=0.655202388763,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=120 of training ,loss=0.760497808456,acc=0.75
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=121 of training ,loss=0.537001907825,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=122 of training ,loss=0.818148374557,acc=0.689999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=123 of training ,loss=0.542934596539,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=124 of training ,loss=0.732468724251,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=125 of training ,loss=0.902946829796,acc=0.719999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=126 of training ,loss=0.792216956615,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=127 of training ,loss=0.769807696342,acc=0.759999930859
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=128 of training ,loss=0.572121977806,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=129 of training ,loss=0.458204060793,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=130 of training ,loss=0.735245645046,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=131 of training ,loss=0.465152561665,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=132 of training ,loss=0.514433383942,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=133 of training ,loss=0.306139856577,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=134 of training ,loss=0.468826860189,acc=0.819999992847
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=135 of training ,loss=0.479107052088,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=136 of training ,loss=0.439425587654,acc=0.83000010252
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=137 of training ,loss=0.642454564571,acc=0.780000030994
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=138 of training ,loss=0.476643562317,acc=0.829999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=139 of training ,loss=0.470420747995,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=140 of training ,loss=0.668199777603,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=141 of training ,loss=0.510135412216,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=142 of training ,loss=0.749851286411,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=143 of training ,loss=0.794470787048,acc=0.749999940395
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=144 of training ,loss=0.62086212635,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=145 of training ,loss=0.353580206633,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=146 of training ,loss=0.53137999773,acc=0.780000030994
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=147 of training ,loss=0.535276114941,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=148 of training ,loss=0.338769942522,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=149 of training ,loss=0.42526692152,acc=0.850000083447
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=150 of training ,loss=0.747541308403,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=151 of training ,loss=0.579699397087,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=152 of training ,loss=0.68031078577,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=153 of training ,loss=0.587678551674,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=154 of training ,loss=0.409786522388,acc=0.819999992847
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=155 of training ,loss=0.547095775604,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=156 of training ,loss=0.453137040138,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=157 of training ,loss=0.343521058559,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=158 of training ,loss=0.386357873678,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=159 of training ,loss=0.525526344776,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=160 of training ,loss=0.640607893467,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=161 of training ,loss=0.643727838993,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=162 of training ,loss=0.476971685886,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=163 of training ,loss=0.522599756718,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=164 of training ,loss=0.654324471951,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=165 of training ,loss=0.551379859447,acc=0.840000033379
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=166 of training ,loss=0.423267185688,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=167 of training ,loss=0.863770008087,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=168 of training ,loss=0.509813606739,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=169 of training ,loss=0.427786111832,acc=0.829999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=170 of training ,loss=0.477488428354,acc=0.850000023842
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=171 of training ,loss=0.650406122208,acc=0.770000040531
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=172 of training ,loss=0.420727550983,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=173 of training ,loss=0.310694009066,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=174 of training ,loss=0.441541880369,acc=0.8599999547
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=175 of training ,loss=0.448526859283,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=176 of training ,loss=0.354545295238,acc=0.879999935627
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=177 of training ,loss=0.312985569239,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=178 of training ,loss=0.630105495453,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=179 of training ,loss=0.654959321022,acc=0.759999990463
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=180 of training ,loss=0.352547287941,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=181 of training ,loss=0.325709432364,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=182 of training ,loss=0.438186526299,acc=0.840000033379
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=183 of training ,loss=0.504984974861,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=184 of training ,loss=0.339066892862,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=185 of training ,loss=0.351441830397,acc=0.850000023842
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=186 of training ,loss=0.489876180887,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=187 of training ,loss=0.296007961035,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=188 of training ,loss=0.310039699078,acc=0.870000064373
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=189 of training ,loss=0.466951519251,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=190 of training ,loss=0.40010112524,acc=0.830000042915
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=191 of training ,loss=0.470716714859,acc=0.799999952316
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=192 of training ,loss=0.60619187355,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=193 of training ,loss=0.583505570889,acc=0.800000011921
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=194 of training ,loss=0.256904751062,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=195 of training ,loss=0.389824032784,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=196 of training ,loss=0.173837810755,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=197 of training ,loss=0.252905040979,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=198 of training ,loss=0.242253020406,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=199 of training ,loss=0.364060282707,acc=0.859999895096
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=200 of training ,loss=0.382718354464,acc=0.859999895096
+INFO:root:the step=200 of dev_step ,loss=1.92881238461,acc=0.450000017881,num_correct=45.0
+INFO:root:the step=200 of dev_step ,loss=1.76487326622,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=200 of dev_step ,loss=1.94275462627,acc=0.540000021458,num_correct=54.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.94275462627,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=200 of dev_step ,loss=1.95298230648,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=200 of dev_step ,loss=1.82435035706,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=200 of dev_step ,loss=1.85910761356,acc=0.509999990463,num_correct=51.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.85910773277,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=200 of dev_step ,loss=2.18107056618,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=200 of dev_step ,loss=1.58620214462,acc=0.550000011921,num_correct=55.0
+INFO:root:the step=200 of dev_step ,loss=1.86916792393,acc=0.479999959469,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.86916780472,acc=0.479999959469,num_correct=48.0
+INFO:root:the step=200 of dev_step ,loss=1.80763912201,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=200 of dev_step ,loss=1.82875525951,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=200 of dev_step ,loss=2.00004601479,acc=0.5,num_correct=50.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=2.00004601479,acc=0.5,num_correct=50.0
+INFO:root:the step=200 of dev_step ,loss=1.74173748493,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=200 of dev_step ,loss=2.03892660141,acc=0.460000008345,num_correct=46.0
+INFO:root:the step=200 of dev_step ,loss=1.85577642918,acc=0.52999997139,num_correct=53.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.85577642918,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=200 of dev_step ,loss=1.77930295467,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=200 of dev_step ,loss=2.02087521553,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=200 of dev_step ,loss=1.8362622261,acc=0.469999969006,num_correct=47.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.8362622261,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=200 of dev_step ,loss=1.85770249367,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=200 of dev_step ,loss=1.72749936581,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=200 of dev_step ,loss=2.05123877525,acc=0.459999978542,num_correct=46.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=2.05123877525,acc=0.459999978542,num_correct=46.0
+INFO:root:the step=200 of dev_step ,loss=1.78334391117,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=200 of dev_step ,loss=1.59203004837,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=200 of dev_step ,loss=2.26106643677,acc=0.449999988079,num_correct=45.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=2.26106643677,acc=0.449999988079,num_correct=45.0
+INFO:root:the step=200 of dev_step ,loss=2.3484120369,acc=0.389999985695,num_correct=39.0
+INFO:root:the step=200 of dev_step ,loss=1.77561354637,acc=0.579999983311,num_correct=58.0
+INFO:root:the step=200 of dev_step ,loss=1.51241505146,acc=0.539999961853,num_correct=54.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.51241505146,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=200 of dev_step ,loss=1.95041275024,acc=0.439999967813,num_correct=44.0
+INFO:root:the step=200 of dev_step ,loss=1.91538453102,acc=0.55999994278,num_correct=56.0
+INFO:root:the step=200 of dev_step ,loss=1.77064311504,acc=0.509999990463,num_correct=51.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=200 of dev_step ,loss=1.77064323425,acc=0.509999990463,num_correct=51.0
+CRITICAL:root:Accuracy on dev set: 6.69666666667
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.53      0.06      0.11      2007
+        1.0       0.50      0.95      0.65      1993
+
+avg / total       0.52      0.50      0.38      4000
+
+INFO:root:[[ 124 1883]
+ [ 108 1885]]
+CRITICAL:root:Saved model /home/liuwei/ming/tensorflow/modelTest/CNN_Model/out_train_model/checkpoints/model-200 at step 200
+CRITICAL:root:Best accuracy 6.69666666667 at step 200
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=201 of training ,loss=0.404104948044,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=202 of training ,loss=0.29640185833,acc=0.859999895096
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=203 of training ,loss=0.278675436974,acc=0.839999914169
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=204 of training ,loss=0.32329288125,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=205 of training ,loss=0.392440825701,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=206 of training ,loss=0.410946398973,acc=0.840000033379
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=207 of training ,loss=0.348195463419,acc=0.850000023842
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=208 of training ,loss=0.522115290165,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=209 of training ,loss=0.373401105404,acc=0.839999914169
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=210 of training ,loss=0.688202917576,acc=0.769999980927
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=211 of training ,loss=0.722988367081,acc=0.77999997139
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=212 of training ,loss=0.349576741457,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=213 of training ,loss=0.376960664988,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=214 of training ,loss=0.28993666172,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=215 of training ,loss=0.414555341005,acc=0.810000002384
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=216 of training ,loss=0.668842732906,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=217 of training ,loss=0.390978574753,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=218 of training ,loss=0.417596489191,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=219 of training ,loss=0.421745926142,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=220 of training ,loss=0.460177063942,acc=0.829999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=221 of training ,loss=0.360782712698,acc=0.8599999547
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=222 of training ,loss=0.342767268419,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=223 of training ,loss=0.338016599417,acc=0.850000023842
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=224 of training ,loss=0.43869882822,acc=0.849999904633
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=225 of training ,loss=0.250523835421,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=226 of training ,loss=0.416281878948,acc=0.860000014305
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=227 of training ,loss=0.286972850561,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=228 of training ,loss=0.272896617651,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=229 of training ,loss=0.220363855362,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=230 of training ,loss=0.432743579149,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=231 of training ,loss=0.440161496401,acc=0.80999994278
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=232 of training ,loss=0.219159588218,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=233 of training ,loss=0.368851482868,acc=0.840000033379
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=234 of training ,loss=0.147156327963,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=235 of training ,loss=0.388687640429,acc=0.850000023842
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=236 of training ,loss=0.219741821289,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=237 of training ,loss=0.288707196712,acc=0.86000007391
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=238 of training ,loss=0.33960339427,acc=0.880000054836
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=239 of training ,loss=0.290027052164,acc=0.880000054836
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=240 of training ,loss=0.292762458324,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=241 of training ,loss=0.256138890982,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=242 of training ,loss=0.328407615423,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=243 of training ,loss=0.286307066679,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=244 of training ,loss=0.229614123702,acc=0.910000085831
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=245 of training ,loss=0.351566165686,acc=0.839999914169
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=246 of training ,loss=0.239926844835,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=247 of training ,loss=0.260685741901,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=248 of training ,loss=0.214354068041,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=249 of training ,loss=0.296748816967,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=250 of training ,loss=0.345371037722,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=251 of training ,loss=0.379048705101,acc=0.829999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=252 of training ,loss=0.269723415375,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=253 of training ,loss=0.273730158806,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=254 of training ,loss=0.362696141005,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=255 of training ,loss=0.243488296866,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=256 of training ,loss=0.170957386494,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=257 of training ,loss=0.252782404423,acc=0.910000085831
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=258 of training ,loss=0.245297461748,acc=0.909999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=259 of training ,loss=0.281962156296,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=260 of training ,loss=0.295410454273,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=261 of training ,loss=0.251701682806,acc=0.860000014305
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=262 of training ,loss=0.609122574329,acc=0.790000021458
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=263 of training ,loss=0.233976095915,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=264 of training ,loss=0.247253015637,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=265 of training ,loss=0.384176939726,acc=0.849999964237
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=266 of training ,loss=0.218553423882,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=267 of training ,loss=0.37892049551,acc=0.789999961853
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=268 of training ,loss=0.240265622735,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=269 of training ,loss=0.292937904596,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=270 of training ,loss=0.369179427624,acc=0.869999945164
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=271 of training ,loss=0.27371391654,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=272 of training ,loss=0.306995719671,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=273 of training ,loss=0.231140434742,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=274 of training ,loss=0.267297267914,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=275 of training ,loss=0.260591506958,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=276 of training ,loss=0.326934337616,acc=0.880000054836
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=277 of training ,loss=0.309495151043,acc=0.819999992847
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=278 of training ,loss=0.269819557667,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=279 of training ,loss=0.259901404381,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=280 of training ,loss=0.374706894159,acc=0.829999923706
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=281 of training ,loss=0.387951910496,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=282 of training ,loss=0.34366235137,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=283 of training ,loss=0.414842575788,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=284 of training ,loss=0.250392436981,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=285 of training ,loss=0.169618740678,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=286 of training ,loss=0.372216612101,acc=0.839999973774
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=287 of training ,loss=0.323724120855,acc=0.860000014305
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=288 of training ,loss=0.359296113253,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=289 of training ,loss=0.363715231419,acc=0.829999983311
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=290 of training ,loss=0.231620132923,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=291 of training ,loss=0.285955876112,acc=0.870000064373
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=292 of training ,loss=0.178992912173,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=293 of training ,loss=0.301248937845,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=294 of training ,loss=0.224651873112,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=295 of training ,loss=0.13621738553,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=296 of training ,loss=0.366161555052,acc=0.819999933243
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=297 of training ,loss=0.184231266379,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=298 of training ,loss=0.327678978443,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=299 of training ,loss=0.243495553732,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=300 of training ,loss=0.104988016188,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=301 of training ,loss=0.328068554401,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=302 of training ,loss=0.238081529737,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=303 of training ,loss=0.253189265728,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=304 of training ,loss=0.328340679407,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=305 of training ,loss=0.245608001947,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=306 of training ,loss=0.214250713587,acc=0.910000085831
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=307 of training ,loss=0.222980126739,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=308 of training ,loss=0.256870299578,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=309 of training ,loss=0.274464786053,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=310 of training ,loss=0.137548521161,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=311 of training ,loss=0.302920818329,acc=0.870000004768
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=312 of training ,loss=0.199962511659,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=313 of training ,loss=0.203576236963,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=314 of training ,loss=0.220542430878,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=315 of training ,loss=0.156260892749,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=316 of training ,loss=0.357996463776,acc=0.869999945164
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=317 of training ,loss=0.133794188499,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=318 of training ,loss=0.119280040264,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=319 of training ,loss=0.141010135412,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=320 of training ,loss=0.188272967935,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=321 of training ,loss=0.104310102761,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=322 of training ,loss=0.213431105018,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=323 of training ,loss=0.244445577264,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=324 of training ,loss=0.122184991837,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=325 of training ,loss=0.286775439978,acc=0.880000054836
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=326 of training ,loss=0.160497516394,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=327 of training ,loss=0.168270841241,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=328 of training ,loss=0.200925797224,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=329 of training ,loss=0.244173884392,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=330 of training ,loss=0.180755540729,acc=0.910000085831
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=331 of training ,loss=0.212767645717,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=332 of training ,loss=0.179523169994,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=333 of training ,loss=0.266849458218,acc=0.880000054836
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=334 of training ,loss=0.215538412333,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=335 of training ,loss=0.159298911691,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=336 of training ,loss=0.242437705398,acc=0.879999995232
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=337 of training ,loss=0.175440639257,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=338 of training ,loss=0.125604480505,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=339 of training ,loss=0.218363016844,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=340 of training ,loss=0.265419453382,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=341 of training ,loss=0.297344923019,acc=0.919999957085
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=342 of training ,loss=0.128392085433,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=343 of training ,loss=0.298682153225,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=344 of training ,loss=0.128634884953,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=345 of training ,loss=0.187103897333,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=346 of training ,loss=0.287555396557,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=347 of training ,loss=0.230826482177,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=348 of training ,loss=0.286725759506,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=349 of training ,loss=0.148967802525,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=350 of training ,loss=0.147548556328,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=351 of training ,loss=0.202112883329,acc=0.909999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=352 of training ,loss=0.18432508409,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=353 of training ,loss=0.175003066659,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=354 of training ,loss=0.239791959524,acc=0.900000095367
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=355 of training ,loss=0.219814375043,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=356 of training ,loss=0.149574548006,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=357 of training ,loss=0.183599352837,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=358 of training ,loss=0.1904014498,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=359 of training ,loss=0.133873641491,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=360 of training ,loss=0.26618412137,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=361 of training ,loss=0.126230612397,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=362 of training ,loss=0.137102693319,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=363 of training ,loss=0.196940749884,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=364 of training ,loss=0.110370248556,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=365 of training ,loss=0.236886829138,acc=0.889999985695
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=366 of training ,loss=0.163410365582,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=367 of training ,loss=0.186280474067,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=368 of training ,loss=0.17650911212,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=369 of training ,loss=0.237573042512,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=370 of training ,loss=0.194167211652,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=371 of training ,loss=0.132034674287,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=372 of training ,loss=0.151413038373,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=373 of training ,loss=0.105262845755,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=374 of training ,loss=0.13422036171,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=375 of training ,loss=0.166749954224,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=376 of training ,loss=0.133613720536,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=377 of training ,loss=0.163193747401,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=378 of training ,loss=0.179278388619,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=379 of training ,loss=0.174340724945,acc=0.899999976158
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=380 of training ,loss=0.173157796264,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=381 of training ,loss=0.137039214373,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=382 of training ,loss=0.210345759988,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=383 of training ,loss=0.16401129961,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=384 of training ,loss=0.229078322649,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=385 of training ,loss=0.180486142635,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=386 of training ,loss=0.186705872416,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=387 of training ,loss=0.127175271511,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=388 of training ,loss=0.145090669394,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=389 of training ,loss=0.167727917433,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=390 of training ,loss=0.105593554676,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=391 of training ,loss=0.218336418271,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=392 of training ,loss=0.170217394829,acc=0.899999976158
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=393 of training ,loss=0.104812249541,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=394 of training ,loss=0.0928943678737,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=395 of training ,loss=0.160778060555,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=396 of training ,loss=0.178882315755,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=397 of training ,loss=0.163437977433,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=398 of training ,loss=0.180632546544,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=399 of training ,loss=0.136176466942,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=400 of training ,loss=0.158651858568,acc=0.930000007153
+INFO:root:the step=400 of dev_step ,loss=2.67040300369,acc=0.469999969006,num_correct=47.0
+INFO:root:the step=400 of dev_step ,loss=2.18550038338,acc=0.460000008345,num_correct=46.0
+INFO:root:the step=400 of dev_step ,loss=1.95746243,acc=0.539999961853,num_correct=54.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=1.95746243,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=400 of dev_step ,loss=2.35913276672,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=400 of dev_step ,loss=2.377835989,acc=0.449999988079,num_correct=45.0
+INFO:root:the step=400 of dev_step ,loss=2.07639670372,acc=0.52999997139,num_correct=53.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.07639670372,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=400 of dev_step ,loss=2.05961871147,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=400 of dev_step ,loss=2.21815609932,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=400 of dev_step ,loss=2.53559112549,acc=0.430000007153,num_correct=43.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.53559112549,acc=0.42999997735,num_correct=43.0
+INFO:root:the step=400 of dev_step ,loss=2.63234853745,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=400 of dev_step ,loss=1.82523298264,acc=0.550000011921,num_correct=55.0
+INFO:root:the step=400 of dev_step ,loss=2.35578417778,acc=0.449999988079,num_correct=45.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.35578417778,acc=0.450000017881,num_correct=45.0
+INFO:root:the step=400 of dev_step ,loss=2.02942013741,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=400 of dev_step ,loss=2.48242759705,acc=0.439999967813,num_correct=44.0
+INFO:root:the step=400 of dev_step ,loss=2.30151772499,acc=0.489999979734,num_correct=49.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.30151772499,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=400 of dev_step ,loss=2.17595410347,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=400 of dev_step ,loss=2.25640392303,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=400 of dev_step ,loss=2.38100767136,acc=0.459999978542,num_correct=46.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.38100767136,acc=0.460000008345,num_correct=46.0
+INFO:root:the step=400 of dev_step ,loss=2.41996002197,acc=0.439999967813,num_correct=44.0
+INFO:root:the step=400 of dev_step ,loss=2.27171897888,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=400 of dev_step ,loss=2.12168622017,acc=0.499999940395,num_correct=50.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.12168645859,acc=0.499999940395,num_correct=50.0
+INFO:root:the step=400 of dev_step ,loss=2.15903306007,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=400 of dev_step ,loss=2.54325079918,acc=0.419999986887,num_correct=42.0
+INFO:root:the step=400 of dev_step ,loss=2.11108207703,acc=0.539999961853,num_correct=54.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.11108207703,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=400 of dev_step ,loss=2.63258290291,acc=0.429999947548,num_correct=43.0
+INFO:root:the step=400 of dev_step ,loss=2.43348097801,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=400 of dev_step ,loss=1.7473013401,acc=0.55999994278,num_correct=56.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=1.7473013401,acc=0.55999994278,num_correct=56.0
+INFO:root:the step=400 of dev_step ,loss=2.28251671791,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=400 of dev_step ,loss=2.17909312248,acc=0.469999969006,num_correct=47.0
+INFO:root:the step=400 of dev_step ,loss=2.35175561905,acc=0.489999949932,num_correct=49.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=400 of dev_step ,loss=2.35175561905,acc=0.489999949932,num_correct=49.0
+CRITICAL:root:Accuracy on dev set: 6.56333333333
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.29      0.01      0.03      1992
+        1.0       0.50      0.97      0.66      2008
+
+avg / total       0.40      0.49      0.34      4000
+
+INFO:root:[[  28 1964]
+ [  67 1941]]
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=401 of training ,loss=0.138576135039,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=402 of training ,loss=0.190115407109,acc=0.8900000453
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=403 of training ,loss=0.213157311082,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=404 of training ,loss=0.19733633101,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=405 of training ,loss=0.150481417775,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=406 of training ,loss=0.151167452335,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=407 of training ,loss=0.134784832597,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=408 of training ,loss=0.0899082943797,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=409 of training ,loss=0.179481759667,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=410 of training ,loss=0.153990253806,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=411 of training ,loss=0.108031347394,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=412 of training ,loss=0.232681721449,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=413 of training ,loss=0.195423930883,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=414 of training ,loss=0.113754287362,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=415 of training ,loss=0.134781911969,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=416 of training ,loss=0.124609977007,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=417 of training ,loss=0.13370847702,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=418 of training ,loss=0.228222608566,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=419 of training ,loss=0.126211777329,acc=0.939999938011
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=420 of training ,loss=0.144601240754,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=421 of training ,loss=0.15506452322,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=422 of training ,loss=0.156750351191,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=423 of training ,loss=0.0968069657683,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=424 of training ,loss=0.250675320625,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=425 of training ,loss=0.147998586297,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=426 of training ,loss=0.0773068070412,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=427 of training ,loss=0.153226837516,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=428 of training ,loss=0.105192750692,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=429 of training ,loss=0.166023015976,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=430 of training ,loss=0.187544390559,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=431 of training ,loss=0.111702106893,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=432 of training ,loss=0.183599099517,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=433 of training ,loss=0.161804914474,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=434 of training ,loss=0.11861860007,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=435 of training ,loss=0.141757890582,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=436 of training ,loss=0.148206204176,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=437 of training ,loss=0.213640242815,acc=0.909999966621
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=438 of training ,loss=0.129463255405,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=439 of training ,loss=0.192888811231,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=440 of training ,loss=0.0896546021104,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=441 of training ,loss=0.124355524778,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=442 of training ,loss=0.109851270914,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=443 of training ,loss=0.161904036999,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=444 of training ,loss=0.160155534744,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=445 of training ,loss=0.11768951267,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=446 of training ,loss=0.106435827911,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=447 of training ,loss=0.0823404416442,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=448 of training ,loss=0.105761535466,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=449 of training ,loss=0.295933246613,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=450 of training ,loss=0.0700128152966,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=451 of training ,loss=0.0786822587252,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=452 of training ,loss=0.205187663436,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=453 of training ,loss=0.0922655463219,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=454 of training ,loss=0.193227186799,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=455 of training ,loss=0.129198715091,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=456 of training ,loss=0.0907914415002,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=457 of training ,loss=0.131016001105,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=458 of training ,loss=0.103545539081,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=459 of training ,loss=0.101539678872,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=460 of training ,loss=0.130146026611,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=461 of training ,loss=0.157312259078,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=462 of training ,loss=0.127847313881,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=463 of training ,loss=0.137750819325,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=464 of training ,loss=0.0724481716752,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=465 of training ,loss=0.0955937728286,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=466 of training ,loss=0.169638052583,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=467 of training ,loss=0.132577136159,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=468 of training ,loss=0.228029951453,acc=0.900000035763
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=469 of training ,loss=0.130488365889,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=470 of training ,loss=0.157670602202,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=471 of training ,loss=0.128091976047,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=472 of training ,loss=0.143492296338,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=473 of training ,loss=0.103852637112,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=474 of training ,loss=0.103584118187,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=475 of training ,loss=0.134198084474,acc=0.930000066757
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=476 of training ,loss=0.0914048701525,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=477 of training ,loss=0.134856104851,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=478 of training ,loss=0.156734570861,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=479 of training ,loss=0.192513525486,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=480 of training ,loss=0.111162319779,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=481 of training ,loss=0.13103325665,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=482 of training ,loss=0.123802311718,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=483 of training ,loss=0.061487082392,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=484 of training ,loss=0.113547421992,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=485 of training ,loss=0.122209556401,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=486 of training ,loss=0.110787577927,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=487 of training ,loss=0.132013365626,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=488 of training ,loss=0.17889764905,acc=0.910000026226
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=489 of training ,loss=0.130645483732,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=490 of training ,loss=0.128314226866,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=491 of training ,loss=0.148629441857,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=492 of training ,loss=0.0939844399691,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=493 of training ,loss=0.108758673072,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=494 of training ,loss=0.142437338829,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=495 of training ,loss=0.0799093022943,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=496 of training ,loss=0.0802247524261,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=497 of training ,loss=0.0571153946221,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=498 of training ,loss=0.143134444952,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=499 of training ,loss=0.0645138248801,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=500 of training ,loss=0.150204196572,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=501 of training ,loss=0.101547934115,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=502 of training ,loss=0.0841451361775,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=503 of training ,loss=0.105535045266,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=504 of training ,loss=0.13217741251,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=505 of training ,loss=0.105985023081,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=506 of training ,loss=0.0707245394588,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=507 of training ,loss=0.110099032521,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=508 of training ,loss=0.119227185845,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=509 of training ,loss=0.046968780458,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=510 of training ,loss=0.0704357028008,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=511 of training ,loss=0.07208776474,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=512 of training ,loss=0.0718339383602,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=513 of training ,loss=0.081799633801,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=514 of training ,loss=0.144787281752,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=515 of training ,loss=0.080845952034,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=516 of training ,loss=0.0685726478696,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=517 of training ,loss=0.20486587286,acc=0.920000016689
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=518 of training ,loss=0.0830988958478,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=519 of training ,loss=0.129676938057,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=520 of training ,loss=0.109714820981,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=521 of training ,loss=0.123279221356,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=522 of training ,loss=0.101243965328,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=523 of training ,loss=0.0951607227325,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=524 of training ,loss=0.0760121271014,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=525 of training ,loss=0.0607902295887,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=526 of training ,loss=0.0601397007704,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=527 of training ,loss=0.129050537944,acc=0.920000076294
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=528 of training ,loss=0.0931477174163,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=529 of training ,loss=0.0781608596444,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=530 of training ,loss=0.207125872374,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=531 of training ,loss=0.0387905687094,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=532 of training ,loss=0.0822156965733,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=533 of training ,loss=0.0612155012786,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=534 of training ,loss=0.0723539367318,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=535 of training ,loss=0.0635248795152,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=536 of training ,loss=0.114221945405,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=537 of training ,loss=0.0992604196072,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=538 of training ,loss=0.0853824466467,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=539 of training ,loss=0.139390900731,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=540 of training ,loss=0.0321708209813,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=541 of training ,loss=0.0516323149204,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=542 of training ,loss=0.120800003409,acc=0.939999997616
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=543 of training ,loss=0.0941100344062,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=544 of training ,loss=0.135969594121,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=545 of training ,loss=0.0648794025183,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=546 of training ,loss=0.0857870280743,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=547 of training ,loss=0.0530997291207,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=548 of training ,loss=0.0569661855698,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=549 of training ,loss=0.0987042710185,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=550 of training ,loss=0.0847089737654,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=551 of training ,loss=0.115011833608,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=552 of training ,loss=0.143014237285,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=553 of training ,loss=0.105627201498,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=554 of training ,loss=0.083503447473,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=555 of training ,loss=0.0861400738358,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=556 of training ,loss=0.0420946553349,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=557 of training ,loss=0.0794051364064,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=558 of training ,loss=0.0618644990027,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=559 of training ,loss=0.0660364329815,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=560 of training ,loss=0.0541185587645,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=561 of training ,loss=0.10854549706,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=562 of training ,loss=0.0756612718105,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=563 of training ,loss=0.103378936648,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=564 of training ,loss=0.141175016761,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=565 of training ,loss=0.0441514626145,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=566 of training ,loss=0.093291670084,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=567 of training ,loss=0.0653172135353,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=568 of training ,loss=0.0747126340866,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=569 of training ,loss=0.0494377054274,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=570 of training ,loss=0.0276187937707,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=571 of training ,loss=0.119800753891,acc=0.94000005722
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=572 of training ,loss=0.0556536763906,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=573 of training ,loss=0.0793874710798,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=574 of training ,loss=0.0670165196061,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=575 of training ,loss=0.0407755337656,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=576 of training ,loss=0.091307297349,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=577 of training ,loss=0.0420305654407,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=578 of training ,loss=0.102461829782,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=579 of training ,loss=0.135390296578,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=580 of training ,loss=0.0479840822518,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=581 of training ,loss=0.0494518727064,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=582 of training ,loss=0.0410413332283,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=583 of training ,loss=0.0580146349967,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=584 of training ,loss=0.0535456240177,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=585 of training ,loss=0.0711281150579,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=586 of training ,loss=0.0711099803448,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=587 of training ,loss=0.0807248055935,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=588 of training ,loss=0.041696164757,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=589 of training ,loss=0.110039100051,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=590 of training ,loss=0.10839395225,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=591 of training ,loss=0.104847684503,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=592 of training ,loss=0.0967867597938,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=593 of training ,loss=0.121636532247,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=594 of training ,loss=0.0731298997998,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=595 of training ,loss=0.0377403572202,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=596 of training ,loss=0.0602863095701,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=597 of training ,loss=0.164464771748,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=598 of training ,loss=0.0477572903037,acc=0.989999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=599 of training ,loss=0.0385296009481,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=600 of training ,loss=0.150825381279,acc=0.950000047684
+INFO:root:the step=600 of dev_step ,loss=2.76615977287,acc=0.490000009537,num_correct=49.0
+INFO:root:the step=600 of dev_step ,loss=3.28323626518,acc=0.420000016689,num_correct=42.0
+INFO:root:the step=600 of dev_step ,loss=2.58802175522,acc=0.569999933243,num_correct=57.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.58802175522,acc=0.569999933243,num_correct=57.0
+INFO:root:the step=600 of dev_step ,loss=3.17444896698,acc=0.459999978542,num_correct=46.0
+INFO:root:the step=600 of dev_step ,loss=2.90700006485,acc=0.5,num_correct=50.0
+INFO:root:the step=600 of dev_step ,loss=2.55596852303,acc=0.519999980927,num_correct=52.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.55596852303,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=600 of dev_step ,loss=2.92789292336,acc=0.469999969006,num_correct=47.0
+INFO:root:the step=600 of dev_step ,loss=2.89743709564,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=600 of dev_step ,loss=2.81208777428,acc=0.499999970198,num_correct=50.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.81208777428,acc=0.499999970198,num_correct=50.0
+INFO:root:the step=600 of dev_step ,loss=3.30105733871,acc=0.409999996424,num_correct=41.0
+INFO:root:the step=600 of dev_step ,loss=2.61360931396,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=600 of dev_step ,loss=2.72275114059,acc=0.549999952316,num_correct=55.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.72275114059,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=600 of dev_step ,loss=2.84847474098,acc=0.469999969006,num_correct=47.0
+INFO:root:the step=600 of dev_step ,loss=2.66239571571,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=600 of dev_step ,loss=3.12654733658,acc=0.489999979734,num_correct=49.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=3.12654733658,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=600 of dev_step ,loss=2.88633036613,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=600 of dev_step ,loss=2.87176012993,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=600 of dev_step ,loss=2.87932729721,acc=0.499999970198,num_correct=50.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.87932729721,acc=0.499999970198,num_correct=50.0
+INFO:root:the step=600 of dev_step ,loss=3.08474802971,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=600 of dev_step ,loss=2.75689291954,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=600 of dev_step ,loss=2.79577708244,acc=0.469999998808,num_correct=47.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.79577708244,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=600 of dev_step ,loss=2.48583841324,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=600 of dev_step ,loss=2.67611432076,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=600 of dev_step ,loss=3.47546505928,acc=0.409999966621,num_correct=41.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=3.47546505928,acc=0.409999966621,num_correct=41.0
+INFO:root:the step=600 of dev_step ,loss=2.80783081055,acc=0.460000008345,num_correct=46.0
+INFO:root:the step=600 of dev_step ,loss=3.12280130386,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=600 of dev_step ,loss=2.70678544044,acc=0.480000019073,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.70678544044,acc=0.480000019073,num_correct=48.0
+INFO:root:the step=600 of dev_step ,loss=2.89508771896,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=600 of dev_step ,loss=2.88924312592,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=600 of dev_step ,loss=2.85308670998,acc=0.479999989271,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=600 of dev_step ,loss=2.85308670998,acc=0.479999989271,num_correct=48.0
+CRITICAL:root:Accuracy on dev set: 6.59
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.35      0.01      0.03      1999
+        1.0       0.50      0.97      0.66      2001
+
+avg / total       0.42      0.49      0.34      4000
+
+INFO:root:[[  28 1971]
+ [  52 1949]]
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=601 of training ,loss=0.048221334815,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=602 of training ,loss=0.0547063909471,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=603 of training ,loss=0.151567012072,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=604 of training ,loss=0.043530728668,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=605 of training ,loss=0.0729520469904,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=606 of training ,loss=0.0379359200597,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=607 of training ,loss=0.131058573723,acc=0.930000007153
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=608 of training ,loss=0.100972034037,acc=0.949999988079
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=609 of training ,loss=0.0695957988501,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=610 of training ,loss=0.0485920421779,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=611 of training ,loss=0.0648031458259,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=612 of training ,loss=0.0742480307817,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=613 of training ,loss=0.0551413521171,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=614 of training ,loss=0.0363458804786,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=615 of training ,loss=0.0359727256,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=616 of training ,loss=0.0474188998342,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=617 of training ,loss=0.0846798941493,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=618 of training ,loss=0.115853846073,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=619 of training ,loss=0.0681914538145,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=620 of training ,loss=0.0780432671309,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=621 of training ,loss=0.0485499277711,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=622 of training ,loss=0.0478404760361,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=623 of training ,loss=0.0388930439949,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=624 of training ,loss=0.106587536633,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=625 of training ,loss=0.0773502588272,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=626 of training ,loss=0.0839967057109,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=627 of training ,loss=0.0672010406852,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=628 of training ,loss=0.0474101155996,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=629 of training ,loss=0.0643126666546,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=630 of training ,loss=0.0545098558068,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=631 of training ,loss=0.0850863903761,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=632 of training ,loss=0.053279209882,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=633 of training ,loss=0.0549836233258,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=634 of training ,loss=0.0535473972559,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=635 of training ,loss=0.0596857145429,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=636 of training ,loss=0.0534052252769,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=637 of training ,loss=0.0602076686919,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=638 of training ,loss=0.0879329442978,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=639 of training ,loss=0.15747231245,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=640 of training ,loss=0.0432609729469,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=641 of training ,loss=0.0445605665445,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=642 of training ,loss=0.0508698113263,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=643 of training ,loss=0.0537605918944,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=644 of training ,loss=0.0404954962432,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=645 of training ,loss=0.0685186833143,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=646 of training ,loss=0.070921652019,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=647 of training ,loss=0.0788481906056,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=648 of training ,loss=0.0361972972751,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=649 of training ,loss=0.0493177063763,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=650 of training ,loss=0.0773745104671,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=651 of training ,loss=0.0599312596023,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=652 of training ,loss=0.030466819182,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=653 of training ,loss=0.0483559146523,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=654 of training ,loss=0.0689164325595,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=655 of training ,loss=0.0982455015182,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=656 of training ,loss=0.0592243745923,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=657 of training ,loss=0.0864627286792,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=658 of training ,loss=0.0663276687264,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=659 of training ,loss=0.100222207606,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=660 of training ,loss=0.0458225794137,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=661 of training ,loss=0.0419520139694,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=662 of training ,loss=0.0355169661343,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=663 of training ,loss=0.0279818847775,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=664 of training ,loss=0.0574737414718,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=665 of training ,loss=0.0401830673218,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=666 of training ,loss=0.139162614942,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=667 of training ,loss=0.0507319159806,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=668 of training ,loss=0.0659345760942,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=669 of training ,loss=0.0157061256468,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=670 of training ,loss=0.079715013504,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=671 of training ,loss=0.0846708491445,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=672 of training ,loss=0.0935610160232,acc=0.959999978542
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=673 of training ,loss=0.0455915629864,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=674 of training ,loss=0.0395511761308,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=675 of training ,loss=0.0512505099177,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=676 of training ,loss=0.05627284199,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=677 of training ,loss=0.0483763366938,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=678 of training ,loss=0.052395273,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=679 of training ,loss=0.0624702274799,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=680 of training ,loss=0.0594102665782,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=681 of training ,loss=0.0359622240067,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=682 of training ,loss=0.0912280157208,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=683 of training ,loss=0.0520793832839,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=684 of training ,loss=0.0494891069829,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=685 of training ,loss=0.0799574777484,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=686 of training ,loss=0.075664870441,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=687 of training ,loss=0.0562853775918,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=688 of training ,loss=0.0533684976399,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=689 of training ,loss=0.100353546441,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=690 of training ,loss=0.0300655439496,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=691 of training ,loss=0.076316781342,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=692 of training ,loss=0.0636980086565,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=693 of training ,loss=0.0723903477192,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=694 of training ,loss=0.09344817698,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=695 of training ,loss=0.0333908833563,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=696 of training ,loss=0.020598160103,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=697 of training ,loss=0.0547586642206,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=698 of training ,loss=0.0330404862761,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=699 of training ,loss=0.0643871873617,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=700 of training ,loss=0.0609293058515,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=701 of training ,loss=0.0477932021022,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=702 of training ,loss=0.070052087307,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=703 of training ,loss=0.053320441395,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=704 of training ,loss=0.0309637002647,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=705 of training ,loss=0.0319640263915,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=706 of training ,loss=0.0515131689608,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=707 of training ,loss=0.0436010733247,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=708 of training ,loss=0.0368029363453,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=709 of training ,loss=0.059163607657,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=710 of training ,loss=0.0318396128714,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=711 of training ,loss=0.068240724504,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=712 of training ,loss=0.0338337309659,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=713 of training ,loss=0.0581705011427,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=714 of training ,loss=0.0696054920554,acc=0.969999969006
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=715 of training ,loss=0.0922017991543,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=716 of training ,loss=0.0594244077802,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=717 of training ,loss=0.0476231388748,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=718 of training ,loss=0.0895326882601,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=719 of training ,loss=0.0759945213795,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=720 of training ,loss=0.0352292619646,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=721 of training ,loss=0.0428850948811,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=722 of training ,loss=0.08250746876,acc=0.950000047684
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=723 of training ,loss=0.0431288257241,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=724 of training ,loss=0.0698799416423,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=725 of training ,loss=0.0545135289431,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=726 of training ,loss=0.0322621539235,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=727 of training ,loss=0.0714026317,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=728 of training ,loss=0.0312090087682,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=729 of training ,loss=0.107732452452,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=730 of training ,loss=0.0251137893647,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=731 of training ,loss=0.0370549634099,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=732 of training ,loss=0.0360360480845,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=733 of training ,loss=0.0141393654048,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=734 of training ,loss=0.0400996431708,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=735 of training ,loss=0.0468766726553,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=736 of training ,loss=0.0277514066547,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=737 of training ,loss=0.0789531096816,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=738 of training ,loss=0.0521160513163,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=739 of training ,loss=0.0564804971218,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=740 of training ,loss=0.075367115438,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=741 of training ,loss=0.0443561188877,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=742 of training ,loss=0.0767724886537,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=743 of training ,loss=0.0509795472026,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=744 of training ,loss=0.0278768781573,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=745 of training ,loss=0.0475027188659,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=746 of training ,loss=0.0608138144016,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=747 of training ,loss=0.0407887622714,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=748 of training ,loss=0.0636824220419,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=749 of training ,loss=0.0610341802239,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=750 of training ,loss=0.0849853903055,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=751 of training ,loss=0.0366177111864,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=752 of training ,loss=0.0234533902258,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=753 of training ,loss=0.0790390223265,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=754 of training ,loss=0.0283213630319,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=755 of training ,loss=0.0292355455458,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=756 of training ,loss=0.0806529968977,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=757 of training ,loss=0.0413904450834,acc=0.989999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=758 of training ,loss=0.0944835171103,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=759 of training ,loss=0.0340824089944,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=760 of training ,loss=0.0466168448329,acc=0.989999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=761 of training ,loss=0.0490610487759,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=762 of training ,loss=0.043814253062,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=763 of training ,loss=0.0464458353817,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=764 of training ,loss=0.0300294626504,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=765 of training ,loss=0.0840132012963,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=766 of training ,loss=0.0515099354088,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=767 of training ,loss=0.0468819625676,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=768 of training ,loss=0.0222092922777,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=769 of training ,loss=0.0393954627216,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=770 of training ,loss=0.0361050516367,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=771 of training ,loss=0.0302502624691,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=772 of training ,loss=0.052669338882,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=773 of training ,loss=0.057667452842,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=774 of training ,loss=0.0192133095115,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=775 of training ,loss=0.0746146887541,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=776 of training ,loss=0.0211237650365,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=777 of training ,loss=0.0241899657995,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=778 of training ,loss=0.012321732007,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=779 of training ,loss=0.0247916504741,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=780 of training ,loss=0.0682737827301,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=781 of training ,loss=0.0329884327948,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=782 of training ,loss=0.047026284039,acc=0.989999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=783 of training ,loss=0.0309784859419,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=784 of training ,loss=0.0526845045388,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=785 of training ,loss=0.0425378233194,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=786 of training ,loss=0.0392547696829,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=787 of training ,loss=0.0538533702493,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=788 of training ,loss=0.0548440851271,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=789 of training ,loss=0.0393710285425,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=790 of training ,loss=0.0348791629076,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=791 of training ,loss=0.0354432091117,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=792 of training ,loss=0.019534997642,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=793 of training ,loss=0.0365061983466,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=794 of training ,loss=0.0346245765686,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=795 of training ,loss=0.0336290076375,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=796 of training ,loss=0.0471436828375,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=797 of training ,loss=0.024709360674,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=798 of training ,loss=0.0288345981389,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=799 of training ,loss=0.0949715003371,acc=0.960000038147
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=800 of training ,loss=0.0317002348602,acc=0.990000009537
+INFO:root:the step=800 of dev_step ,loss=2.70701956749,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=800 of dev_step ,loss=3.24457120895,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.74064397812,acc=0.439999967813,num_correct=44.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.74064397812,acc=0.439999997616,num_correct=44.0
+INFO:root:the step=800 of dev_step ,loss=3.15469956398,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.03797030449,acc=0.5,num_correct=50.0
+INFO:root:the step=800 of dev_step ,loss=3.49956464767,acc=0.489999979734,num_correct=49.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.49956464767,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=800 of dev_step ,loss=2.84202313423,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=800 of dev_step ,loss=3.46597337723,acc=0.449999988079,num_correct=45.0
+INFO:root:the step=800 of dev_step ,loss=3.3842382431,acc=0.469999998808,num_correct=47.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.38423800468,acc=0.469999998808,num_correct=47.0
+INFO:root:the step=800 of dev_step ,loss=3.50471568108,acc=0.449999958277,num_correct=45.0
+INFO:root:the step=800 of dev_step ,loss=3.1710922718,acc=0.489999979734,num_correct=49.0
+INFO:root:the step=800 of dev_step ,loss=3.01642775536,acc=0.52999997139,num_correct=53.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.01642775536,acc=0.52999997139,num_correct=53.0
+INFO:root:the step=800 of dev_step ,loss=3.08891367912,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=800 of dev_step ,loss=3.5767865181,acc=0.449999988079,num_correct=45.0
+INFO:root:the step=800 of dev_step ,loss=3.02653455734,acc=0.509999990463,num_correct=51.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.02653455734,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=800 of dev_step ,loss=3.06582736969,acc=0.549999952316,num_correct=55.0
+INFO:root:the step=800 of dev_step ,loss=3.17535758018,acc=0.439999967813,num_correct=44.0
+INFO:root:the step=800 of dev_step ,loss=3.45105028152,acc=0.479999959469,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.45105028152,acc=0.479999959469,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.53474736214,acc=0.449999958277,num_correct=45.0
+INFO:root:the step=800 of dev_step ,loss=3.00016570091,acc=0.539999961853,num_correct=54.0
+INFO:root:the step=800 of dev_step ,loss=3.15732169151,acc=0.479999989271,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.15732169151,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.11617684364,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.27120661736,acc=0.509999990463,num_correct=51.0
+INFO:root:the step=800 of dev_step ,loss=3.30485129356,acc=0.479999989271,num_correct=48.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.30485129356,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.12065696716,acc=0.519999980927,num_correct=52.0
+INFO:root:the step=800 of dev_step ,loss=3.0645699501,acc=0.479999989271,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.50700807571,acc=0.469999969006,num_correct=47.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.50700807571,acc=0.469999969006,num_correct=47.0
+INFO:root:the step=800 of dev_step ,loss=3.26752996445,acc=0.479999959469,num_correct=48.0
+INFO:root:the step=800 of dev_step ,loss=3.35326194763,acc=0.449999958277,num_correct=45.0
+INFO:root:the step=800 of dev_step ,loss=3.0714430809,acc=0.539999961853,num_correct=54.0
+INFO:root:this dev zip is error;need more than 0 values to unpack
+INFO:root:the step=800 of dev_step ,loss=3.07144284248,acc=0.539999961853,num_correct=54.0
+CRITICAL:root:Accuracy on dev set: 6.53
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.28      0.01      0.02      2001
+        1.0       0.49      0.97      0.65      1999
+
+avg / total       0.39      0.49      0.34      4000
+
+INFO:root:[[  25 1976]
+ [  65 1934]]
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=801 of training ,loss=0.0400227978826,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=802 of training ,loss=0.0241666994989,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=803 of training ,loss=0.0300649572164,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=804 of training ,loss=0.051110971719,acc=0.989999949932
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=805 of training ,loss=0.0454590730369,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=806 of training ,loss=0.0377011038363,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=807 of training ,loss=0.0404510088265,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=808 of training ,loss=0.0387165546417,acc=0.979999959469
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=809 of training ,loss=0.0272436682135,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=810 of training ,loss=0.0170307848603,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=811 of training ,loss=0.0533961094916,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=812 of training ,loss=0.0268800407648,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=813 of training ,loss=0.0267391745001,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=814 of training ,loss=0.0278761908412,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=815 of training ,loss=0.038304220885,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=816 of training ,loss=0.0378724075854,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=817 of training ,loss=0.0437715873122,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=818 of training ,loss=0.0356277376413,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=819 of training ,loss=0.0180911142379,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=820 of training ,loss=0.0475126579404,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=821 of training ,loss=0.0333528183401,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=822 of training ,loss=0.0151320639998,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=823 of training ,loss=0.0280086565763,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=824 of training ,loss=0.0532771870494,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=825 of training ,loss=0.0243682563305,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=826 of training ,loss=0.0386238470674,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=827 of training ,loss=0.0529100000858,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=828 of training ,loss=0.0219675675035,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=829 of training ,loss=0.0580609515309,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=830 of training ,loss=0.0607343912125,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=831 of training ,loss=0.0422545485198,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=832 of training ,loss=0.0467670299113,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=833 of training ,loss=0.0218934565783,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=834 of training ,loss=0.0460085123777,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=835 of training ,loss=0.0173297151923,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=836 of training ,loss=0.0579868927598,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=837 of training ,loss=0.057346906513,acc=0.97000002861
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=838 of training ,loss=0.0271525513381,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=839 of training ,loss=0.0155378729105,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=840 of training ,loss=0.0252367015928,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=841 of training ,loss=0.0325543731451,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=842 of training ,loss=0.018475657329,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=843 of training ,loss=0.0265592113137,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=844 of training ,loss=0.0330222696066,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=845 of training ,loss=0.060704883188,acc=0.980000019073
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=846 of training ,loss=0.020188998431,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=847 of training ,loss=0.0285590104759,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=848 of training ,loss=0.0238401591778,acc=0.990000009537
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(100, 2)
+INFO:root:the step=849 of training ,loss=0.0248562376946,acc=1.0
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(0, 2)
+INFO:root:this zip is error;need more than 0 values to unpack
+INFO:root:the step=850 of training ,loss=0.0357928834856,acc=0.990000009537
+INFO:root:train result is:++++++===+++++++
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.90      0.90      0.90     42036
+        1.0       0.90      0.90      0.90     42964
+
+avg / total       0.90      0.90      0.90     85000
+
+INFO:root:[[37847  4189]
+ [ 4220 38744]]
+INFO:root:the step=850 of dev_step ,loss=0.531109213829,acc=0.769999980927,num_correct=77.0
+INFO:root:the step=850 of dev_step ,loss=0.459304094315,acc=0.849999964237,num_correct=85.0
+INFO:root:the step=850 of dev_step ,loss=0.499061912298,acc=0.849999964237,num_correct=85.0
+INFO:root:the step=850 of dev_step ,loss=0.486471116543,acc=0.839999914169,num_correct=84.0
+INFO:root:this test zip is error;need more than 0 values to unpack
+INFO:root:the step=850 of dev_step ,loss=0.486471116543,acc=0.839999914169,num_correct=84.0
+CRITICAL:root:Accuracy on test set is 1.0375 based on the best model
+INFO:root:             precision    recall  f1-score   support
+
+        0.0       0.83      0.84      0.84       261
+        1.0       0.83      0.82      0.82       239
+
+avg / total       0.83      0.83      0.83       500
+
+INFO:root:[[220  41]
+ [ 44 195]]
+CRITICAL:root:The processes is completed
+Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: Tesla K40m, pci bus id: 0000:03:00.0
+/job:localhost/replica:0/task:0/gpu:2 -> device: 2, name: Tesla K40m, pci bus id: 0000:82:00.0

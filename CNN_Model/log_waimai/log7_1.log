@@ -1,0 +1,109 @@
+INFO:root:pos counts:4000
+INFO:root:neg counts:4000
+INFO:root:The maximum length of all sentences: 279
+INFO:root:the total vocabulary is 493
+INFO:root:next batch ---#---pos=4000,neg=4000
+INFO:root:x_train: 6400, x_dev: 300, x_test: 1600
+INFO:root:y_train: 6400, y_dev: 300, y_test: 1600
+2017-07-03 09:21:50.542677: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 09:21:50.542726: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 09:21:50.542734: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 09:21:50.542740: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 09:21:50.542746: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 09:21:57.866547: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:02:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-03 09:21:58.148500: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x7f34dc0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2017-07-03 09:21:58.149885: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 1 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:03:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-03 09:21:58.448114: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x7f36bf0 exists before initializing the StreamExecutor. We haven't verified StreamExecutor works with that.
+2017-07-03 09:21:58.449809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 2 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:82:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+2017-07-03 09:21:58.450451: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 0 and 2
+2017-07-03 09:21:58.450507: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 1 and 2
+2017-07-03 09:21:58.450529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 2 and 0
+2017-07-03 09:21:58.450547: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 2 and 1
+2017-07-03 09:21:58.450593: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 1 2 
+2017-07-03 09:21:58.450608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y Y N 
+2017-07-03 09:21:58.450619: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 1:   Y Y N 
+2017-07-03 09:21:58.450629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 2:   N N Y 
+2017-07-03 09:21:58.450671: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0)
+2017-07-03 09:21:58.450696: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -> (device: 1, name: Tesla K40m, pci bus id: 0000:03:00.0)
+2017-07-03 09:21:58.450709: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:2) -> (device: 2, name: Tesla K40m, pci bus id: 0000:82:00.0)
+INFO:root:the sequence_length is:279
+INFO:root:Tensor("embedding/embedding_lookup:0", shape=(?, 279, 256), dtype=float32)
+INFO:root:this embedded_chars_expanded size:Tensor("Shape:0", shape=(4,), dtype=int32)
+INFO:root:Tensor("embedding/ExpandDims:0", shape=(?, 279, 256, 1), dtype=float32)
+INFO:root:[2, 256, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-2/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-2/W:0' shape=(2, 256, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-2/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-2/conv:0", shape=(?, 278, 1, 256), dtype=float32)
+INFO:root:[3, 256, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-3/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-3/W:0' shape=(3, 256, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-3/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-3/conv:0", shape=(?, 277, 1, 256), dtype=float32)
+INFO:root:[4, 256, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-4/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-4/W:0' shape=(4, 256, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-4/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-4/conv:0", shape=(?, 276, 1, 256), dtype=float32)
+INFO:root:[5, 256, 1, 256]
+INFO:root:++++W++++:Tensor("conv-maxpool-5/Shape:0", shape=(4,), dtype=int32)
+INFO:root:<tf.Variable 'conv-maxpool-5/W:0' shape=(5, 256, 1, 256) dtype=float32_ref>
+INFO:root:++++b++++:Tensor("conv-maxpool-5/Shape_1:0", shape=(1,), dtype=int32)
+INFO:root:pooling input shape:Tensor("conv-maxpool-5/conv:0", shape=(?, 275, 1, 256), dtype=float32)
+INFO:root:Combine all the pooled features
+INFO:root:-------------output layer------
+INFO:root:save path is /home/liuwei/ming/tensorflow/modelTest/CNN_Model/out_train_model
+WARNING:tensorflow:From train.py:79: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+WARNING:tensorflow:From train.py:79: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+WARNING:tensorflow:From /usr/lib/python2.7/site-packages/tensorflow/python/util/tf_should_use.py:170: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+WARNING:tensorflow:From /usr/lib/python2.7/site-packages/tensorflow/python/util/tf_should_use.py:170: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+INFO:root:train_batches type is <type 'generator'>
+INFO:root:start CNN train: batch_size=512,num_epochs=50
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=1 of training ,loss=4.1536488533,acc=0.513671875
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=2 of training ,loss=6.4818944931,acc=0.51171875
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=3 of training ,loss=4.88149118423,acc=0.501953125
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=4 of training ,loss=3.21208286285,acc=0.56640625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=5 of training ,loss=3.73187303543,acc=0.591796875
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=6 of training ,loss=4.57329082489,acc=0.576171875
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=7 of training ,loss=3.67771816254,acc=0.603515625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=8 of training ,loss=2.66001939774,acc=0.6953125
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=9 of training ,loss=2.98041772842,acc=0.650390625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=10 of training ,loss=3.46347332001,acc=0.603515625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=11 of training ,loss=3.49920558929,acc=0.634765625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(512, 2)
+INFO:root:the step=12 of training ,loss=3.26069688797,acc=0.619140625
+INFO:root:+++++++++++++++train_batches type is <type 'numpy.ndarray'>,(256, 2)
